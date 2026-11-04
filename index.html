@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111b21">
+  <meta name="description" content="A windblown child, a handmade kite, and a sky about to open. An original animated short drawn and scored in the browser.">
+  <title>The Kite That Pulled the Sky</title>
+  <link rel="stylesheet" href="player.css">
+</head>
+<body>
+  <main id="theater" aria-label="The Kite That Pulled the Sky, an animated short film">
+    <section id="screen" aria-label="Film player" tabindex="0" data-composition-id="kite-film" data-width="1920" data-height="1080" data-duration="60">
+      <canvas id="sky-layer" width="1280" height="720" aria-hidden="true"></canvas>
+      <canvas id="picture" width="1280" height="720" role="img" aria-label="A child flies a red kite on a stormy hill. A gust pulls the clouds apart and reveals the sunrise."></canvas>
+      <div id="film-title" aria-hidden="true">
+        <div class="title-ink"><span>The Kite That</span><i>Pulled the Sky</i></div>
+      </div>
+      <div id="loading" role="status"><i class="paper-kite"></i><span>Opening the film</span></div>
+      <div id="shade" aria-hidden="true"></div>
+      <div id="controls" aria-label="Playback controls">
+        <div id="seek-track">
+          <div class="track-rule" aria-hidden="true"><span id="played"></span><span id="ticks"></span></div>
+          <input id="seek" type="range" min="0" max="60" step=".01" value="0" aria-label="Film position" disabled>
+        </div>
+        <div class="toolbar">
+          <button id="play" type="button" aria-label="Pause film" title="Pause (Space)" disabled>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path id="play-glyph" d="M7 5h3v14H7zm7 0h3v14h-3z" fill="currentColor" stroke="none"/></svg>
+          </button>
+          <button id="replay" type="button" aria-label="Replay film" title="Replay (R)" disabled>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 10a7.1 7.1 0 1 1 .4 5.1M5 4.7V10h5.3"/></svg>
+          </button>
+          <span class="clock"><span id="elapsed">0:00</span><span class="clock-slash">/</span>1:00</span>
+          <span class="spacer"></span>
+          <button id="sound" type="button" aria-label="Unmute soundtrack" aria-pressed="false" title="Unmute soundtrack (M)" disabled>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h4l5-4v14l-5-4H3z"/><path id="sound-glyph" d="m16 9 5 6m0-6-5 6"/></svg>
+            <span id="sound-label">Sound off</span>
+          </button>
+          <button id="full" type="button" aria-label="Enter fullscreen" title="Fullscreen (F)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path id="full-glyph" d="M8 4H4v4m12-4h4v4M4 16v4h4m12-4v4h-4"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="notice" role="status" aria-live="polite"></div>
+    </section>
+    <noscript>This film needs JavaScript to draw its scenes and play its score.</noscript>
+  </main>
+  <script src="js/clouds.js"></script>
+  <script src="js/land.js"></script>
+  <script src="js/character.js"></script>
+  <script src="js/kite.js"></script>
+  <script src="js/score.js"></script>
+  <script src="js/film.js"></script>
+  <script src="js/player.js"></script>
+</body>
+</html>
